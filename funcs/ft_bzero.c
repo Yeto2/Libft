@@ -8,7 +8,7 @@ void ft_bzero(void *s, size_t n)
 
     while(i < n)
     {
-        str[i] = '/0';
+        str[i] = '\0';
         i++;
     }
 }

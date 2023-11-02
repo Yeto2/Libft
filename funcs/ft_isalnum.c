@@ -1,10 +1,8 @@
-// #include <stdio.h>
-
-int ft_isalnum(unsigned char character)
+int ft_isalnum(int c)
 {
-    if((character >= 'a' && character <= 'z') 
-    || (character >= 'A' && character <= 'Z')
-    || (character >= 0 && character <= 9))
+    if((c >= 'a' && c <= 'z') 
+    || (c >= 'A' && c <= 'Z')
+    || (c >= '0' && c <= '9'))
     {
          return (1);
     }else
@@ -12,10 +10,3 @@ int ft_isalnum(unsigned char character)
         return (0);
     }
 }
-
-// int main()
-// {
-//     int n = ft_isalnum('^');
-//     printf("%d" , n);
-//     return 0;
-// }

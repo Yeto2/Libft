@@ -11,7 +11,7 @@ void *ft_memmove(void *dst, const void *src, size_t len)
     char copy[srclen];
     while(strsrc[i]){
         copy[i] = strsrc[i];
-        i++;
+        i++;      
     }
     i =0;
     while(i < len)

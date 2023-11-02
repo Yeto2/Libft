@@ -1,11 +1,11 @@
 #include <stdlib.h>
-char ft_memset(void *b, int c, size_t len)
+void *ft_memset(void *b, int c, size_t len)
  {
-    int i;
+    unsigned int i;
     i = 0;
 
-    unsigned char *str;
-    str = (unsigned char *)b;
+    char *str;
+    str = (char *)b;
 
 
     while(i < len)
@@ -14,5 +14,5 @@ char ft_memset(void *b, int c, size_t len)
       i++;
     }
 
-    return (*str);
+    return (str);
  }
