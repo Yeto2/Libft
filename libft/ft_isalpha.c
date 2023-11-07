@@ -5,14 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 21:19:51 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/05 21:19:52 by yessemna         ###   ########.fr       */
+/*   Created: 2023/11/06 19:45:48 by yessemna          #+#    #+#             */
+/*   Updated: 2023/11/06 19:51:46 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(char c)
+int ft_isalpha(int c)
 {
-    if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+    {
         return (1);
-    return (0);
+    }else
+    {
+        return (0);
+    }
+    
+    
 }
