@@ -6,19 +6,20 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:19:49 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/05 21:19:50 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/08 01:38:42 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if((c >= 'a' && c <= 'z') 
-    || (c >= 'A' && c <= 'Z')
-    || (c >= '0' && c <= '9'))
-    {
-         return (1);
-    }else
-    {
-        return (0);
-    }
+	if ((c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

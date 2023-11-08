@@ -6,13 +6,13 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:19:57 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/05 21:19:58 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/07 22:28:08 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int n)
+int	ft_isdigit(int n)
 {
-    if(n >= '0' && n <= '9')
-        return (1);
-    return (0);
+	if (n >= '0' && n <= '9')
+		return (1);
+	return (0);
 }

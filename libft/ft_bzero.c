@@ -6,21 +6,22 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:19:36 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/05 21:19:37 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/08 01:41:07 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    int i;
-    i = 0;
-    unsigned char *str = s;
+	int				i;
+	unsigned char	*str;
 
-    while(i < n)
-    {
-        str[i] = '\0';
-        i++;
-    }
+	str = s;
+	i = 0;
+	while (i < n)
+	{
+		str[i] = '\0';
+		i++;
+	}
 }

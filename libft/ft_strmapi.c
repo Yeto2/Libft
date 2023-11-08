@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 21:20:05 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/07 22:41:40 by yessemna         ###   ########.fr       */
+/*   Created: 2023/11/07 16:08:16 by yessemna          #+#    #+#             */
+/*   Updated: 2023/11/07 23:55:32 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t			i;
-	unsigned char	*str1; 
-	unsigned char	*str2;
+	int		i;
+	int		slen;
+	char	*res;
 
 	i = 0;
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	if (n == 0 || (str1[i] == 0 && str2[i] == 0))
+	slen = ft_strlen(s);
+	res = (char *)malloc(sizeof(char) * slen + 1);
+	if (!s || !res)
 		return (0);
-	while (--n)
+	while (s[i])
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		res[i] = f(i, s[i]);
 		i++;
 	}
-	return (str1[i] - str2[i]);
+	res[i] = '\0';
+	return (res);
 }

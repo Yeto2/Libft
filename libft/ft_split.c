@@ -6,26 +6,29 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:46:19 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/07 01:50:17 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/08 01:33:51 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static size_t	ft_countword(char const *s, char c)
 {
 	size_t	count;
+	size_t	i;
 
+	count = 0;
+	i = 0;
 	if (!s)
 		return (0);
-	count = 0;
-	while (*s)
+	while (s[i])
 	{
-		while (*s == c)
-			s++;
-		if (*s)
+		while (s[i] == c)
+			i++;
+		if (s[i])
 			count++;
-		while (*s != c && *s)
-			s++;
+		while (s[i] != c && s[i])
+			i++;
 	}
 	return (count);
 }

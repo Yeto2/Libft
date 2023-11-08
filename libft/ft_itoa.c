@@ -1,39 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 15:47:15 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/07 23:50:35 by yessemna         ###   ########.fr       */
+/*   Created: 2023/11/07 14:35:57 by yessemna          #+#    #+#             */
+/*   Updated: 2023/11/07 22:26:35 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	count_digit(int nbr)
 {
-	size_t	i;
-	size_t	j;
+	int	digits;
+
+	digits = 0;
+	while (nbr)
+	{
+		nbr /= 10;
+		digits++;
+	}
+	return (digits);
+}
+
+char	*ft_itoa(int n)
+{
+	int		sign;
+	int		dcount;
 	char	*res;
 
-	i = 0;
-	j = 0;
-	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	sign = n < 0;
+	dcount = count_digit(n) + sign;
+	if (n == 0)
+		dcount = 1;
+	res = (char *)malloc(sizeof(char) * (dcount + 1));
 	if (!res)
 		return (0);
-	while (s1[i] && i <= ft_strlen(s1))
+	res[dcount] = '\0';
+	if (sign)
 	{
-		res[i] = s1[i];
-		i++;
+		*res = '-' ;
+		res[--dcount] = -(n % 10) + '0';
+		n = -(n / 10);
 	}
-	while (s2[j])
+	while (dcount-- - sign)
 	{
-		res[i] = s2[j];
-		i++;
-		j++;
+		res[dcount] = (n % 10) + '0';
+		n /= 10;
 	}
-	res[i] = '\0';
 	return (res);
 }

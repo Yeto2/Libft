@@ -1,34 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 21:20:30 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/08 00:04:11 by yessemna         ###   ########.fr       */
+/*   Created: 2023/11/07 20:23:30 by yessemna          #+#    #+#             */
+/*   Updated: 2023/11/07 23:36:28 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include "libft.h"
+#include <unistd.h>
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putchar(char c, int fd)
 {
-	char	cr;
-	int		slen;
+	write (fd, &c, 1);
+}
 
-	cr = (char)c;
-	slen = ft_strlen(s);
-	while (slen)
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (fd > 0)
 	{
-		if (s[slen] == cr)
+		if (n == -2147483648)
 		{
-			return ((char *)s + slen);
+			write(fd, "-2147483648", 11);
 		}
-		slen--;
+		else if (n < 0)
+		{
+			ft_putchar('-', fd);
+			n *= -1;
+			ft_putnbr_fd(n, fd);
+		}
+		else if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+			ft_putnbr_fd(n % 10, fd);
+		}
+		else if (n >= 0 && n <= 9)
+		{
+			ft_putchar(n + '0', fd);
+		}
 	}
-	if (s[slen] == cr)
-		return ((char *)s + slen);
-	return (0);
 }
