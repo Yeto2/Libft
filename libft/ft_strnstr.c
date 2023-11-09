@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:20:28 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/08 00:00:13 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/08 14:21:41 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	h = (char *)haystack;
 	n = (char *)needle;
 	i = 0;
+	if (!haystack && len == 0)
+		return (0);
 	if (n[0] == 0)
 		return (h);
 	while (h[i])
