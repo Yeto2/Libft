@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:46:19 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/09 01:07:42 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/09 23:55:37 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,6 @@ char	**ft_split(char const *s, char c)
 			else
 				word_len = ft_strchr(s, c) - s;
 			lst[i] = ft_substr(s, 0, word_len);
-			if(!lst[i])
-			{
-				while (i--)
-				{
-					free(lst[i]);
-				}
-				free(lst);
-				return NULL;
-			}
 			s += word_len;
 			i++;
 		}

@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:02:50 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/08 04:52:30 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/09 17:38:25 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ;
 	if (fd > 0)
 	{
 		while (s[i])

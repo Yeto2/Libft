@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:46:42 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/08 01:31:24 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/09 17:29:08 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen ;
 
 	i = 0;
+	if (!s)
+		return (0);
 	slen = ft_strlen(s);
 	if (start > slen)
 		return (ft_calloc(1, 1));

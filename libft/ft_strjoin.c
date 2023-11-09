@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:47:15 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/07 23:50:35 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/10 00:04:29 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (!s1 || !s2)
+	{
+		return (0);
+	}
 	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
 	if (!res)
 		return (0);
@@ -29,11 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	}
 	while (s2[j])
-	{
-		res[i] = s2[j];
-		i++;
-		j++;
-	}
+		res[i++] = s2[j++];
 	res[i] = '\0';
 	return (res);
 }

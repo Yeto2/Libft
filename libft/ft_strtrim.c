@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 21:40:56 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/08 01:28:46 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/09 20:43:54 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	char	*res;
 
+	if (!s1)
+	{
+		return (0);
+	}
 	end = ft_strlen(s1) - 1;
 	start = 0;
 	if (!s1 || !set)
