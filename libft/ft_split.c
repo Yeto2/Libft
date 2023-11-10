@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:46:19 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/09 23:55:37 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:06:46 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,28 @@ static size_t	ft_countword(char const *s, char c)
 	return (count);
 }
 
+char	**free_tab(char **lst, int i)
+{
+	while (i--)
+		free(lst[i]);
+	free(lst);
+	return (NULL);
+}
+
+size_t	set_world_len(const char *s, char c)
+{
+	size_t	word_len;
+
+	if (!ft_strchr(s, c))
+		word_len = ft_strlen(s);
+	else
+		word_len = ft_strchr(s, c) - s;
+	return (word_len);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**lst;
-	size_t	word_len;
 	int		i;
 
 	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
@@ -49,12 +67,10 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s)
 		{
-			if (!ft_strchr(s, c))
-				word_len = ft_strlen(s);
-			else
-				word_len = ft_strchr(s, c) - s;
-			lst[i] = ft_substr(s, 0, word_len);
-			s += word_len;
+			lst[i] = ft_substr(s, 0, set_world_len(s, c));
+			if (!lst[i])
+				return (free_tab(lst, i));
+			s += set_world_len(s, c);
 			i++;
 		}
 	}

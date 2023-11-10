@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:19:36 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/08 01:41:07 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:07:40 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*str;
 
 	str = s;

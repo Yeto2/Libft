@@ -6,16 +6,12 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:23:30 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/07 23:36:28 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:07:12 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c, int fd)
-{
-	write (fd, &c, 1);
-}
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -27,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 		}
 		else if (n < 0)
 		{
-			ft_putchar('-', fd);
+			ft_putchar_fd('-', fd);
 			n *= -1;
 			ft_putnbr_fd(n, fd);
 		}
@@ -38,7 +34,7 @@ void	ft_putnbr_fd(int n, int fd)
 		}
 		else if (n >= 0 && n <= 9)
 		{
-			ft_putchar(n + '0', fd);
+			ft_putchar_fd(n + '0', fd);
 		}
 	}
 }

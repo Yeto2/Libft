@@ -6,16 +6,17 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:19:32 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/08 01:42:06 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:03:23 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
+#include <limits.h>
 
 int	ft_atoi(const char *str)
 {
 	int	i;
-	int	nbr;
+	unsigned long long 	nbr;
 	int	sign;
 
 	i = 0;
@@ -32,6 +33,10 @@ int	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nbr = (nbr * 10) + (str[i] - 48);
+		if (nbr > LONG_MAX && sign == 1)
+			return (-1);
+		else if (nbr > LONG_MAX && sign == -1)
+			return (0);
 		i++;
 	}
 	return (nbr * sign);
