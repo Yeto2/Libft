@@ -6,11 +6,11 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:19:36 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/10 15:07:40 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/12 01:15:54 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

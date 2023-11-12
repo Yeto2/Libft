@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:19:32 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/10 23:03:23 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/12 01:12:55 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	unsigned long long 	nbr;
-	int	sign;
+	int					i;
+	int					sign;
+	unsigned long long	nbr;
 
 	i = 0;
 	sign = 1;

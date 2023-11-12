@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:07:51 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/08 01:36:27 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/12 01:43:24 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
+	long	cnt;
 
-	ptr = malloc(count * size);
+	cnt = (long)count;
+	if (cnt < 0)
+		return (0);
+	ptr = malloc(cnt * size);
 	if (!ptr)
 	{
 		return (0);
 	}
-	ft_bzero(ptr, count * size);
+	ft_bzero(ptr, cnt * size);
 	return (ptr);
 }

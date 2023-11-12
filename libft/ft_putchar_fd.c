@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 04:40:10 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/10 00:12:51 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/12 00:06:11 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd > 0)
+	if (fd >= 0)
 		write (fd, &c, 1);
 }

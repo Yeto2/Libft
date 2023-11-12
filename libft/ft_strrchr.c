@@ -6,11 +6,10 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:20:30 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/08 00:04:11 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:17:07 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)

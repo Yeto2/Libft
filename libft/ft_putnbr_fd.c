@@ -6,16 +6,15 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:23:30 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/10 23:07:12 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/12 00:06:29 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (fd > 0)
+	if (fd >= 0)
 	{
 		if (n == -2147483648)
 		{

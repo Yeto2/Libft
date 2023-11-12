@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 23:33:38 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/09 17:39:00 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/12 00:08:08 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putendl_fd(char *s, int fd)
 	i = 0;
 	if (!s)
 		return ;
-	if (fd > 0)
+	if (fd >= 0)
 	{
 		while (s[i])
 		{
