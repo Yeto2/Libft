@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:20:21 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/12 00:44:49 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/12 17:50:30 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	if (!dstsize)
 		return (srclen);
-	while (i < srclen && i < dstsize -1)
+	while (i < srclen && i < dstsize - 1)
 	{
 		dst[i] = src[i];
 		i++;

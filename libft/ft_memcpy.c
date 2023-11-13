@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:20:07 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/12 03:09:43 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:45:24 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char		*strdst;
-	const char	*strsrc;
-	size_t		i;
+	unsigned char	*strdst;
+	unsigned char	*strsrc;
+	size_t			i;
 
-	strdst = (char *) dst;
-	strsrc = (const char *) src;
+	strdst = (unsigned char *) dst;
+	strsrc = (unsigned char *) src;
 	i = 0;
 	if (!strdst && !strsrc)
 	{
