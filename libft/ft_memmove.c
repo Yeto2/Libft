@@ -6,11 +6,11 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:20:10 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/07 23:22:01 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/17 04:59:32 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

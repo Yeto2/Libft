@@ -6,7 +6,7 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:46:19 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/10 15:06:46 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/17 05:33:42 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ static size_t	ft_countword(char const *s, char c)
 
 	count = 0;
 	i = 0;
-	if (!s)
-		return (0);
 	while (s[i])
 	{
 		while (s[i] == c)
@@ -45,6 +43,8 @@ size_t	set_world_len(const char *s, char c)
 {
 	size_t	word_len;
 
+	if (!s)
+		return (0);
 	if (!ft_strchr(s, c))
 		word_len = ft_strlen(s);
 	else
@@ -57,6 +57,8 @@ char	**ft_split(char const *s, char c)
 	char	**lst;
 	int		i;
 
+	if (!s)
+		return (0);
 	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
 	if (!s || !lst)
 		return (0);

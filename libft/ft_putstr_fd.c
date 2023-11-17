@@ -6,11 +6,11 @@
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:02:50 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/12 00:08:35 by yessemna         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:58:05 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -27,4 +27,12 @@ void	ft_putstr_fd(char *s, int fd)
 			i++;
 		}
 	}
+}
+#include <fcntl.h>
+
+int main()
+{
+	int fd = open("test.txt", O_RDWR | O_CREAT);
+	ft_putstr_fd("Hello World!", fd);
+	return (0);
 }

@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yessemna <yessemna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 21:20:14 by yessemna          #+#    #+#             */
-/*   Updated: 2023/11/17 16:56:43 by yessemna         ###   ########.fr       */
+/*   Created: 2023/11/13 22:05:11 by yessemna          #+#    #+#             */
+/*   Updated: 2023/11/15 11:58:25 by yessemna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned char	cr;
-	char			*str;
-	int				i;
+	t_list	*last;
 
-	i = 0;
-	cr = (unsigned char)c;
-	str = (char *)s;
-	while (str[i])
+	if (!lst)
+		return (0);
+	last = lst;
+	while (last != NULL && last->next != NULL)
 	{
-		if (str[i] == cr)
-			return (str + i);
-		i++;
+		last = last -> next;
 	}
-	if (str[i] == cr)
-		return (str + i);
-	return (0);
+	return (last);
 }
